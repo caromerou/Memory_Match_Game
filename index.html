@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English-Spanish Memory Game / Juego de Memoria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-container">
+        <header>
+            <h1>English-Spanish Memory</h1>
+            <p>Empareja la palabra o frase en español con su significado en inglés.</p>
+            <div class="score-board">
+                <span>Intentos / Tries: <strong id="tries">0</strong></span>
+                <span>Aciertos / Matches: <strong id="matches">0</strong> / <span id="total-pairs">0</span></span>
+            </div>
+        </header>
+
+        <!-- Tablero de tarjetas -->
+        <div id="memory-board" class="board"></div>
+
+        <!-- Botón de reinicio -->
+        <button id="restart-btn" class="btn" onclick="startGame()">Reiniciar / Restart</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

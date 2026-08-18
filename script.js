@@ -55,7 +55,8 @@ function startGame() {
         card.classList.add('card');
         card.dataset.index = index;
         card.dataset.pairId = item.pairId;
-        card.innerText = "?"; // Texto oculto inicial
+        card.cardIndex = index + 1; // Guardamos su número de tarjeta
+        card.innerText = card.cardIndex; // Muestra el número en lugar de "?"
         card.addEventListener('click', flipCard);
         board.appendChild(card);
     });
@@ -101,12 +102,12 @@ function checkForMatch() {
             }, 300);
         }
     } else {
-        // No coinciden, se tapan de nuevo tras un breve retraso
+        // No coinciden, se tapan de nuevo mostrando su número correspondiente tras un breve retraso
         setTimeout(() => {
             first.card.classList.remove('flipped');
-            first.card.innerText = "?";
+            first.card.innerText = first.card.cardIndex;
             second.card.classList.remove('flipped');
-            second.card.innerText = "?";
+            second.card.innerText = second.card.cardIndex;
             resetTurn();
         }, 1000);
     }
